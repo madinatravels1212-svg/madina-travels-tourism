@@ -1,300 +1,664 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Madina Travels and Tourism | Riyadh</title>
+<title>Madina Travels and Tourism | Riyadh</title>
 
-  <meta name="description" content="Madina Travels and Tourism - Air Ticket, Umrah and Visa Services in Riyadh, Saudi Arabia.">
+<meta name="description" content="Madina Travels and Tourism - Air Ticket, Umrah and Visa Services in Riyadh, Saudi Arabia.">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    body {
-      background: #f7f9fc;
-      color: #222;
-      line-height: 1.6;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    header {
-      background: linear-gradient(135deg, #075e54, #0b8f7c);
-      color: white;
-      padding: 22px 15px;
-      text-align: center;
-    }
+body{
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
+  background:#f5f8f7;
+  color:#182522;
+  line-height:1.7;
+}
 
-    .logo-box {
-      width: 105px;
-      height: 105px;
-      margin: auto;
-      background: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #075e54;
-      font-weight: bold;
-      font-size: 15px;
-      border: 4px solid #d4af37;
-    }
+:root{
+  --green:#075e54;
+  --dark:#043c35;
+  --gold:#d4af37;
+  --light:#eef7f4;
+  --white:#ffffff;
+}
 
-    header h1 {
-      margin-top: 14px;
-      font-size: 27px;
-    }
+/* HEADER */
+header{
+  background:linear-gradient(135deg,var(--dark),var(--green));
+  color:white;
+  text-align:center;
+  padding:28px 18px 35px;
+}
 
-    header p {
-      font-size: 16px;
-      margin-top: 5px;
-    }
+.logo{
+  width:105px;
+  height:105px;
+  margin:auto;
+  border-radius:50%;
+  background:white;
+  border:4px solid var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--green);
+  font-size:17px;
+  font-weight:bold;
+  line-height:1.2;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
 
-    nav {
-      background: white;
-      padding: 12px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,.08);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+header h1{
+  font-size:29px;
+  margin-top:15px;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #075e54;
-      font-weight: bold;
-      margin: 0 8px;
-      font-size: 14px;
-    }
+header .location{
+  font-size:16px;
+  margin-top:4px;
+}
 
-    .hero {
-      padding: 55px 20px;
-      text-align: center;
-      background: linear-gradient(rgba(0,70,60,.72), rgba(0,70,60,.72)),
-      url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80");
-      background-size: cover;
-      background-position: center;
-      color: white;
-    }
+.slogan{
+  color:#f3d66b;
+  font-weight:bold;
+  margin-top:10px;
+}
 
-    .hero h2 {
-      font-size: 34px;
-      margin-bottom: 12px;
-    }
+/* NAVIGATION */
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:white;
+  box-shadow:0 3px 15px rgba(0,0,0,.10);
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  padding:12px 5px;
+}
 
-    .hero p {
-      font-size: 18px;
-      max-width: 700px;
-      margin: auto;
-    }
+nav a{
+  color:var(--green);
+  text-decoration:none;
+  font-weight:bold;
+  margin:5px 10px;
+  font-size:14px;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 22px;
-      padding: 13px 24px;
-      background: #d4af37;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-    }
+/* HERO */
+.hero{
+  min-height:470px;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(212,175,55,.25),transparent 30%),
+    linear-gradient(135deg,#064f47,#0a8a77);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:55px 20px;
+}
 
-    section {
-      padding: 45px 18px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.hero-content{
+  max-width:850px;
+}
 
-    .section-title {
-      text-align: center;
-      color: #075e54;
-      font-size: 28px;
-      margin-bottom: 28px;
-    }
+.badge{
+  display:inline-block;
+  border:1px solid rgba(255,255,255,.5);
+  padding:7px 16px;
+  border-radius:30px;
+  margin-bottom:18px;
+  font-size:14px;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
+.hero h2{
+  font-size:42px;
+  line-height:1.2;
+  margin-bottom:18px;
+}
 
-    .card {
-      background: white;
-      padding: 25px 18px;
-      text-align: center;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,.08);
-    }
+.hero p{
+  font-size:18px;
+  max-width:700px;
+  margin:auto;
+}
 
-    .card .icon {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
+.buttons{
+  margin-top:28px;
+}
 
-    .card h3 {
-      color: #075e54;
-      margin-bottom: 8px;
-    }
+.btn{
+  display:inline-block;
+  padding:13px 24px;
+  margin:6px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s;
+}
 
-    .languages {
-      background: #eef8f6;
-      text-align: center;
-    }
+.btn-gold{
+  background:var(--gold);
+  color:white;
+}
 
-    .lang-buttons button {
-      border: none;
-      padding: 10px 18px;
-      margin: 5px;
-      border-radius: 20px;
-      background: #075e54;
-      color: white;
-      cursor: pointer;
-    }
+.btn-white{
+  background:white;
+  color:var(--green);
+}
 
-    .contact {
-      background: white;
-      text-align: center;
-    }
+.btn:hover{
+  transform:translateY(-3px);
+}
 
-    .contact-box {
-      max-width: 600px;
-      margin: auto;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,.08);
-    }
+/* SECTIONS */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:65px 18px;
+}
 
-    .contact-number {
-      font-size: 20px;
-      font-weight: bold;
-      color: #075e54;
-      margin: 12px 0;
-    }
+.title{
+  text-align:center;
+  margin-bottom:35px;
+}
 
-    .whatsapp {
-      display: inline-block;
-      margin: 7px;
-      padding: 12px 20px;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: bold;
-    }
+.title h2{
+  color:var(--green);
+  font-size:30px;
+}
 
-    footer {
-      background: #075e54;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-    }
+.title p{
+  color:#66736f;
+  margin-top:5px;
+}
 
-    footer p {
-      margin: 5px;
-    }
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:22px;
+}
 
-    .slogan {
-      services">
+.card{
+  background:white;
+  border-radius:18px;
+  padding:30px 22px;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,.07);
+  border:1px solid #e4eeeb;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.icon{
+  width:70px;
+  height:70px;
+  margin:0 auto 16px;
+  border-radius:50%;
+  background:var(--light);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:34px;
+}
+
+.card h3{
+  color:var(--green);
+  font-size:21px;
+  margin-bottom:8px;
+}
+
+/* ABOUT */
+.about{
+  background:var(--light);
+  max-width:none;
+}
+
+.about-inner{
+  max-width:1000px;
+  margin:auto;
+  text-align:center;
+}
+
+.about-box{
+  background:white;
+  border-radius:20px;
+  padding:32px;
+  box-shadow:0 8px 25px rgba(0,0,0,.06);
+}
+
+/* LANGUAGE */
+.language{
+  text-align:center;
+}
+
+.lang-btn{
+  border:0;
+  padding:11px 20px;
+  margin:5px;
+  border-radius:25px;
+  background:var(--green);
+  color:white;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.lang-btn:hover{
+  background:var(--dark);
+}
+
+#languageText{
+  margin-top:18px;
+  color:var(--green);
+  font-weight:bold;
+  font-size:18px;
+}
+
+/* CONTACT */
+.contact-section{
+  background:linear-gradient(135deg,var(--dark),var(--green));
+  color:white;
+  max-width:none;
+}
+
+.contact-inner{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+}
+
+.contact-inner .title h2{
+  color:white;
+}
+
+.contact-inner .title p{
+  color:#dcebe7;
+}
+
+.contact-card{
+  background:white;
+  color:#222;
+  border-radius:20px;
+  padding:30px 20px;
+}
+
+.number{
+  font-size:20px;
+  font-weight:bold;
+  color:var(--green);
+  margin:15px 0 8px;
+}
+
+.whatsapp{
+  display:inline-block;
+  background:#25D366;
+  color:white;
+  text-decoration:none;
+  padding:11px 20px;
+  border-radius:25px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.call{
+  display:inline-block;
+  background:var(--gold);
+  color:white;
+  text-decoration:none;
+  padding:11px 20px;
+  border-radius:25px;
+  font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+  background:#022d28;
+  color:white;
+  text-align:center;
+  padding:30px 15px;
+}
+
+footer .brand{
+  color:#f3d66b;
+  font-size:20px;
+  font-weight:bold;
+}
+
+footer p{
+  margin:5px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+  header h1{
+    font-size:23px;
+  }
+
+  .hero{
+    min-height:430px;
+  }
+
+  .hero h2{
+    font-size:31px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  section{
+    padding:48px 15px;
+  }
+
+  .title h2{
+    font-size:26px;
+  }
+
+  nav a{
+    margin:4px 7px;
+    font-size:13px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    MADINA<br>
+    TRAVELS
+  </div>
+
+  <h1>Madina Travels and Tourism</h1>
+
+  <div class="location">
+    📍 Riyadh, Saudi Arabia
+  </div>
+
+  <div class="slogan">
+    আপনাদের সেবায় সর্বদা আন্তরিক
+  </div>
+
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#language">Language</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="badge">
+      ✈️ Travel • 🕋 Umrah • 🛂 Visa
+    </div>
+
+    <h2>
+      আপনার বিশ্বস্ত<br>
+      Travel Partner
+    </h2>
+
+    <p>
+      এয়ার টিকেট, উমরাহ ও ভিসা সার্ভিসের জন্য
+      মদিনা ট্রাভেলস এন্ড ট্যুরিজম।
+    </p>
+
+    <div class="buttons">
+
+      <a class="btn btn-gold" href="#contact">
+        📞 যোগাযোগ করুন
+      </a>
+
+      <a class="btn btn-white"
+         href="https://wa.me/966575423054"
+         target="_blank">
+        💬 WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+  <div class="title">
+    <h2>আমাদের সার্ভিস</h2>
+    <p>আপনার ভ্রমণের জন্য প্রয়োজনীয় সার্ভিস একসাথে</p>
+  </div>
+
+  <div class="services">
 
     <div class="card">
       <div class="icon">✈️</div>
       <h3>Air Ticket</h3>
-      <p>দেশ-বিদেশের বিভিন্ন গন্তব্যের এয়ার টিকেট সার্ভিস।</p>
+      <p>
+        দেশ-বিদেশের বিভিন্ন গন্তব্যের
+        এয়ার টিকেট সংক্রান্ত সার্ভিস।
+      </p>
     </div>
 
     <div class="card">
       <div class="icon">🕋</div>
       <h3>Umrah Service</h3>
-      <p>উমরাহ যাত্রার জন্য নির্ভরযোগ্য ও সহজ সার্ভিস।</p>
+      <p>
+        উমরাহ যাত্রার জন্য প্রয়োজনীয়
+        সার্ভিস ও সহযোগিতা।
+      </p>
     </div>
 
     <div class="card">
       <div class="icon">🛂</div>
       <h3>Visa Service</h3>
-      <p>বিভিন্ন ভিসা সংক্রান্ত সার্ভিস ও সহযোগিতা।</p>
+      <p>
+        বিভিন্ন ধরনের ভিসা সংক্রান্ত
+        সার্ভিস ও সহযোগিতা।
+      </p>
     </div>
 
   </div>
+
 </section>
 
-<section id="about">
-  <h2 class="section-title">About Us</h2>
+<!-- ABOUT -->
 
-  <div class="card">
-    <h3>Madina Travels and Tourism</h3>
+<div class="about" id="about">
 
-    <p>
-      আমরা Riyadh, Saudi Arabia থেকে ভ্রমণ ও উমরাহ
-      সংক্রান্ত বিভিন্ন সার্ভিস প্রদান করি।
-    </p>
+  <section>
 
-    <p style="margin-top:12px;">
-      আমাদের লক্ষ্য হলো গ্রাহকদের জন্য সহজ,
-      আন্তরিক ও নির্ভরযোগ্য ট্রাভেল সার্ভিস প্রদান করা।
-    </p>
+    <div class="about-inner">
+
+      <div class="title">
+        <h2>Madina Travels and Tourism</h2>
+        <p>Riyadh, Saudi Arabia</p>
+      </div>
+
+      <div class="about-box">
+
+        <p>
+          আপনার ভ্রমণকে সহজ ও সুন্দর করতে
+          আমরা Air Ticket, Umrah এবং Visa
+          Service নিয়ে কাজ করছি।
+        </p>
+
+        <p style="margin-top:15px;">
+          আপনাদের সেবায় সর্বদা আন্তরিক।
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- LANGUAGE -->
+
+<section class="language" id="language">
+
+  <div class="title">
+    <h2>Choose Your Language</h2>
+    <p>আপনার পছন্দের ভাষা নির্বাচন করুন</p>
   </div>
-</section>
 
-<section class="languages">
-  <h2 class="section-title">Language</h2>
+  <button class="lang-btn"
+          onclick="changeLanguage('bn')">
+    বাংলা
+  </button>
 
-  <div class="lang-buttons">
-    <button onclick="setLanguage('bn')">বাংলা</button>
-    <button onclick="setLanguage('hi')">हिन्दी</button>
-    <button onclick="setLanguage('ur')">اردو</button>
-  </div>
+  <button class="lang-btn"
+          onclick="changeLanguage('hi')">
+    हिन्दी
+  </button>
 
-  <p id="languageText" style="margin-top:15px;">
+  <button class="lang-btn"
+          onclick="changeLanguage('ur')">
+    اردو
+  </button>
+
+  <p id="languageText">
     আপনাদের সেবায় সর্বদা আন্তরিক
   </p>
+
 </section>
 
-<section class="contact" id="contact">
-  <h2 class="section-title">Contact Us</h2>
+<!-- CONTACT -->
 
-  <div class="contact-box">
+<div class="contact-section" id="contact">
 
-    <p><strong>📍 Location</strong></p>
-    <p>Riyadh, Saudi Arabia</p>
+  <section>
 
-    <div class="contact-number">📱 +966 57 542 3054</div>
+    <div class="contact-inner">
 
-    <a class="whatsapp"
-       href="https://wa.me/966575423054"
-       target="_blank">
-       WhatsApp
-    </a>
+      <div class="title">
+        <h2>যোগাযোগ করুন</h2>
+        <p>আমাদের সাথে সরাসরি যোগাযোগ করুন</p>
+      </div>
 
-    <div class="contact-number">📱 +966 56 075 7152</div>
+      <div class="contact-card">
 
-    <a class="whatsapp"
-       href="https://wa.me/966560757152"
-       target="_blank">
-       WhatsApp
-    </a>
+        <p>📍 <strong>Riyadh, Saudi Arabia</strong></p>
 
-  </div>
-</section>
+        <div class="number">
+          +966 57 542 3054
+        </div>
+
+        <a class="whatsapp"
+           href="https://wa.me/966575423054"
+           target="_blank">
+          💬 WhatsApp
+        </a>
+
+        <br>
+
+        <a class="call"
+           href="tel:+966575423054">
+          📞 Call Now
+        </a>
+
+        <hr style="margin:25px 0;border:0;border-top:1px solid #ddd;">
+
+        <div class="number">
+          +966 56 075 7152
+        </div>
+
+        <a class="whatsapp"
+           href="https://wa.me/966560757152"
+           target="_blank">
+          💬 WhatsApp
+        </a>
+
+        <br>
+
+        <a class="call"
+           href="tel:+966560757152">
+          📞 Call Now
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- FOOTER -->
 
 <footer>
-  <p><strong>Madina Travels and Tourism</strong></p>
-  <p>Riyadh, Saudi Arabia</p>
-  <p class="slogan">আপনাদের সেবায় সর্বদা আন্তরিক</p>
-  <p>© 2026 Madina Travels and Tourism</p>
+
+  <div class="brand">
+    Madina Travels and Tourism
+  </div>
+
+  <p>Air Ticket • Umrah • Visa Service</p>
+
+  <p>📍 Riyadh, Saudi Arabia</p>
+
+  <p class="slogan">
+    আপনাদের সেবায় সর্বদা আন্তরিক
+  </p>
+
+  <p style="margin-top:15px;font-size:13px;">
+    © 2026 Madina Travels and Tourism
+  </p>
+
 </footer>
 
 <script>
-  function setLanguage(lang) {
-    const text = document.getElementById("languageText");
 
-    if (lang === "bn") {
-      text.innerText = "আপনাদের সেবায় সর্বদা আন্তরিক";
-    }
+function changeLanguage(lang){
 
-    if (lang === "hi") {
-      
+  const text =
+    document.getElementById("languageText");
+
+  if(lang === "bn"){
+    text.innerText =
+      "আপনাদের সেবায় সর্বদা আন্তরিক";
+  }
+
+  if(lang === "hi"){
+    text.innerText =
+      "आपकी सेवा में हमेशा ईमानदार";
+  }
+
+  if(lang === "ur"){
+    text.innerText =
+      "آپ کی خدمت میں ہمیشہ مخلص";
+  }
+
+}
+
+</script>
+
+</body>
+</html>
