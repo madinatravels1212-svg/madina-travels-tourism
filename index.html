@@ -709,4 +709,49 @@ function flightSearch(){
     "👥 " + passengers + "<br><br>" +
     "আপনার Flight Search Request প্রস্তুত হয়েছে।";
 }
-</script>
+function sendFlightToWhatsApp(){
+  const from = document.getElementById("flightFrom").value;
+  const to = document.getElementById("flightTo").value;
+  const date = document.getElementById("flightDate").value;
+  const passengers = document.getElementById("flightPassengers").value;
+
+  if(!from || !to || !date){
+    alert("Please fill in From, To and Date");
+    return;
+  }
+
+  const message =
+    "✈️ Flight Search Request%0A%0A" +
+    "🛫 From: " + from + "%0A" +
+    "🛬 To: " + to + "%0A" +
+    "📅 Date: " + date + "%0A" +
+    "👥 Passengers: " + passengers;
+
+  window.open(
+    "https://wa.me/966575423054?text=" + message,
+    "_blank"
+  );
+}function sendFlightToWhatsApp(number){
+  const from = document.getElementById("flightFrom").value;
+  const to = document.getElementById("flightTo").value;
+  const date = document.getElementById("flightDate").value;
+  const passengers = document.getElementById("flightPassengers").value;
+
+  if(!from || !to || !date){
+    alert("Please fill in From, To and Date");
+    return;
+  }
+
+  const message =
+    "✈️ Flight Search Request\n\n" +
+    "🛫 From: " + from + "\n" +
+    "🛬 To: " + to + "\n" +
+    "📅 Date: " + date + "\n" +
+    "👥 Passengers: " + passengers;
+
+  window.open(
+    "https://wa.me/" + number + "?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+}
