@@ -661,4 +661,52 @@ function changeLanguage(lang){
 </script>
 
 </body>
-</html>
+</html><section id="flight" style="padding:40px 15px;background:#f5f8f7;">
+  <div style="max-width:900px;margin:auto;background:white;padding:25px;border-radius:20px;box-shadow:0 5px 20px rgba(0,0,0,.1);">
+    <h2 style="text-align:center;color:#075e54;">✈️ Flight Search</h2>
+    <p style="text-align:center;">আপনার পছন্দের রুট ও যাত্রার তারিখ নির্বাচন করুন</p>
+
+    <div style="display:grid;gap:15px;margin-top:20px;">
+      <input id="flightFrom" type="text" placeholder="🛫 From — যেমন: Riyadh" style="padding:14px;border:1px solid #ccc;border-radius:10px;">
+      <input id="flightTo" type="text" placeholder="🛬 To — যেমন: Dhaka" style="padding:14px;border:1px solid #ccc;border-radius:10px;">
+      <input id="flightDate" type="date" style="padding:14px;border:1px solid #ccc;border-radius:10px;">
+
+      <select id="flightPassengers" style="padding:14px;border:1px solid #ccc;border-radius:10px;">
+        <option>1 Passenger</option>
+        <option>2 Passengers</option>
+        <option>3 Passengers</option>
+        <option>4 Passengers</option>
+        <option>5 Passengers</option>
+      </select>
+
+      <button onclick="flightSearch()" style="padding:15px;border:0;border-radius:25px;background:#075e54;color:white;font-size:17px;font-weight:bold;">
+        🔎 Search Flight
+      </button>
+    </div>
+
+    <div id="flightMessage" style="margin-top:20px;text-align:center;"></div>
+  </div>
+</section>
+
+<script>
+function flightSearch(){
+  const from = document.getElementById("flightFrom").value;
+  const to = document.getElementById("flightTo").value;
+  const date = document.getElementById("flightDate").value;
+  const passengers = document.getElementById("flightPassengers").value;
+
+  const message = document.getElementById("flightMessage");
+
+  if(!from || !to || !date){
+    message.innerHTML = "⚠️ From, To এবং Date পূরণ করুন।";
+    return;
+  }
+
+  message.innerHTML =
+    "✈️ <strong>Flight Search Request</strong><br><br>" +
+    from + " → " + to + "<br>" +
+    "📅 " + date + "<br>" +
+    "👥 " + passengers + "<br><br>" +
+    "আপনার Flight Search Request প্রস্তুত হয়েছে।";
+}
+</script>
