@@ -92,7 +92,7 @@ nav a{
   color:var(--green);
   text-decoration:none;
   font-weight:bold;
-  margin:5px 10px;
+  margin:5px 9px;
   font-size:14px;
 }
 
@@ -243,6 +243,73 @@ section{
   box-shadow:0 8px 25px rgba(0,0,0,.06);
 }
 
+/* FLIGHT SEARCH */
+.flight-section{
+  background:#f5f8f7;
+}
+
+.flight-box{
+  max-width:900px;
+  margin:auto;
+  background:white;
+  padding:28px 22px;
+  border-radius:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,.10);
+}
+
+.flight-box h2{
+  text-align:center;
+  color:var(--green);
+  margin-bottom:5px;
+}
+
+.flight-box .subtitle{
+  text-align:center;
+  color:#66736f;
+  margin-bottom:22px;
+}
+
+.flight-form{
+  display:grid;
+  gap:15px;
+}
+
+.flight-form input,
+.flight-form select{
+  width:100%;
+  padding:14px;
+  border:1px solid #ccc;
+  border-radius:10px;
+  font-size:16px;
+  background:white;
+}
+
+.flight-form label{
+  font-weight:bold;
+  color:var(--green);
+  margin-bottom:-8px;
+}
+
+.flight-button{
+  padding:15px;
+  border:0;
+  border-radius:25px;
+  background:var(--green);
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.flight-button:hover{
+  background:var(--dark);
+}
+
+#flightMessage{
+  margin-top:20px;
+  text-align:center;
+}
+
 /* LANGUAGE */
 .language{
   text-align:center;
@@ -372,8 +439,12 @@ footer p{
   }
 
   nav a{
-    margin:4px 7px;
+    margin:4px 6px;
     font-size:13px;
+  }
+
+  .flight-box{
+    padding:25px 15px;
   }
 }
 </style>
@@ -381,6 +452,7 @@ footer p{
 
 <body>
 
+<!-- HEADER -->
 <header>
 
   <div class="logo">
@@ -400,16 +472,17 @@ footer p{
 
 </header>
 
+<!-- NAVIGATION -->
 <nav>
   <a href="#home">Home</a>
   <a href="#services">Services</a>
+  <a href="#flight">✈️ Flight</a>
   <a href="#about">About</a>
   <a href="#language">Language</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
-
 <div class="hero" id="home">
 
   <div class="hero-content">
@@ -447,7 +520,6 @@ footer p{
 </div>
 
 <!-- SERVICES -->
-
 <section id="services">
 
   <div class="title">
@@ -488,8 +560,78 @@ footer p{
 
 </section>
 
-<!-- ABOUT -->
+<!-- FLIGHT SEARCH -->
+<section class="flight-section" id="flight">
 
+  <div class="title">
+    <h2>✈️ Flight Search</h2>
+    <p>আপনার পছন্দের রুট ও যাত্রার তারিখ নির্বাচন করুন</p>
+  </div>
+
+  <div class="flight-box">
+
+    <div class="flight-form">
+
+      <input
+        id="flightFrom"
+        type="text"
+        placeholder="🛫 From — যেমন: Riyadh"
+      >
+
+      <input
+        id="flightTo"
+        type="text"
+        placeholder="🛬 To — যেমন: Dhaka"
+      >
+
+      <label for="flightDate">
+        📅 Departure Date
+      </label>
+
+      <input
+        id="flightDate"
+        type="date"
+      >
+
+      <select id="flightPassengers">
+
+        <option value="1 Passenger">
+          1 Passenger
+        </option>
+
+        <option value="2 Passengers">
+          2 Passengers
+        </option>
+
+        <option value="3 Passengers">
+          3 Passengers
+        </option>
+
+        <option value="4 Passengers">
+          4 Passengers
+        </option>
+
+        <option value="5 Passengers">
+          5 Passengers
+        </option>
+
+      </select>
+
+      <button
+        class="flight-button"
+        onclick="flightSearch()">
+        🔎 Search Flight
+      </button>
+
+    </div>
+
+    <div id="flightMessage"></div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
 <div class="about" id="about">
 
   <section>
@@ -522,7 +664,6 @@ footer p{
 </div>
 
 <!-- LANGUAGE -->
-
 <section class="language" id="language">
 
   <div class="title">
@@ -552,7 +693,6 @@ footer p{
 </section>
 
 <!-- CONTACT -->
-
 <div class="contact-section" id="contact">
 
   <section>
@@ -566,7 +706,9 @@ footer p{
 
       <div class="contact-card">
 
-        <p>📍 <strong>Riyadh, Saudi Arabia</strong></p>
+        <p>
+          📍 <strong>Riyadh, Saudi Arabia</strong>
+        </p>
 
         <div class="number">
           +966 57 542 3054
@@ -613,16 +755,19 @@ footer p{
 </div>
 
 <!-- FOOTER -->
-
 <footer>
 
   <div class="brand">
     Madina Travels and Tourism
   </div>
 
-  <p>Air Ticket • Umrah • Visa Service</p>
+  <p>
+    Air Ticket • Umrah • Visa Service
+  </p>
 
-  <p>📍 Riyadh, Saudi Arabia</p>
+  <p>
+    📍 Riyadh, Saudi Arabia
+  </p>
 
   <p class="slogan">
     আপনাদের সেবায় সর্বদা আন্তরিক
@@ -636,6 +781,7 @@ footer p{
 
 <script>
 
+/* LANGUAGE */
 function changeLanguage(lang){
 
   const text =
@@ -658,47 +804,29 @@ function changeLanguage(lang){
 
 }
 
-</script>
+/* FLIGHT SEARCH */
+function flightSearch(){
 
-</body>
-</html><section id="flight" style="padding:40px 15px;background:#f5f8f7;">
-  <div style="max-width:900px;margin:auto;background:white;padding:25px;border-radius:20px;box-shadow:0 5px 20px rgba(0,0,0,.1);">
-    <h2 style="text-align:center;color:#075e54;">✈️ Flight Search</h2>
-    <p style="text-align:center;">আপনার পছন্দের রুট ও যাত্রার তারিখ নির্বাচন করুন</p>
+  const from =
+    document.getElementById("flightFrom").value.trim();
 
-    <div style="display:grid;gap:15px;margin-top:20px;">
-      <input id="flightFrom" type="text" placeholder="🛫 From — যেমন: Riyadh" style="padding:14px;border:1px solid #ccc;border-radius:10px;">
-      <input id="flightTo" type="text" placeholder="🛬 To — যেমন: Dhaka" style="padding:14px;border:1px solid #ccc;border-radius:10px;">
-     <label for="flightDate" style="font-weight:bold;color:#075e54;">📅 Departure Date</label> <input id="flightDate" type="date" style="padding:14px;border:1px solid #ccc;border-radius:10px;">
+  const to =
+    document.getElementById("flightTo").value.trim();
 
-      <select id="flightPassengers" style="padding:14px;border:1px solid #ccc;border-radius:10px;">
-        <option>1 Passenger</option>
-        <option>2 Passengers</option>
-        <option>3 Passengers</option>
-        <option>4 Passengers</option>
-        <option>5 Passengers</option>
-      </select>
+  const date =
+    document.getElementById("flightDate").value;
 
-      <button onclick="flightSearch()" style="padding:15px;border:0;border-radius:25px;background:#075e54;color:white;font-size:17px;font-weight:bold;">
-        🔎 Search Flight
-      </button>
-    </div>
+  const passengers =
+    document.getElementById("flightPassengers").value;
 
-    <div id="flightMessage" style="margin-top:20px;text-align:center;"></div>
-  </div>
-</section>
+  const message =
+    document.getElementById("flightMessage");
 
-</body>
-<script>
-function flightSearch() {
-  const from = document.getElementById("flightFrom").value.trim();
-  const to = document.getElementById("flightTo").value.trim();
-  const date = document.getElementById("flightDate").value;
-  const passengers = document.getElementById("flightPassengers").value;
-  const message = document.getElementById("flightMessage");
+  if(!from || !to || !date){
 
-  if (!from || !to || !date) {
-    message.innerHTML = "⚠️ From, To এবং Date পূরণ করুন।";
+    message.innerHTML =
+      "⚠️ অনুগ্রহ করে From, To এবং Date পূরণ করুন।";
+
     return;
   }
 
@@ -709,19 +837,36 @@ function flightSearch() {
     "📅 Date: " + date + "\n" +
     "👥 Passengers: " + passengers;
 
-  const encodedMessage = encodeURIComponent(whatsappMessage);
+  const encodedMessage =
+    encodeURIComponent(whatsappMessage);
 
   message.innerHTML =
+
     "✈️ <strong>Flight Search Request</strong><br><br>" +
+
     "🛫 " + from + " → 🛬 " + to + "<br>" +
+
     "📅 " + date + "<br>" +
+
     "👥 " + passengers + "<br><br>" +
+
     "আপনার Flight Search Request প্রস্তুত হয়েছে।<br><br>" +
-    "<a href='https://wa.me/966575423054?text=" + encodedMessage +
-    "' target='_blank' style='display:inline-block;background:#25D366;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;font-weight:bold;margin:5px;'>💬 WhatsApp 1</a>" +
-    "<a href='https://wa.me/966560757152?text=" + encodedMessage +
-    "' target='_blank' style='display:inline-block;background:#25D366;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;font-weight:bold;margin:5px;'>💬 WhatsApp 2</a>";
+
+    "<a href='https://wa.me/966575423054?text=" +
+    encodedMessage +
+    "' target='_blank' style='display:inline-block;background:#25D366;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;font-weight:bold;margin:5px;'>" +
+
+    "💬 WhatsApp 1</a>" +
+
+    "<a href='https://wa.me/966560757152?text=" +
+    encodedMessage +
+    "' target='_blank' style='display:inline-block;background:#25D366;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;font-weight:bold;margin:5px;'>" +
+
+    "💬 WhatsApp 2</a>";
+
 }
+
 </script>
+
 </body>
 </html>
