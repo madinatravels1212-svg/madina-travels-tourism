@@ -754,6 +754,102 @@ function sendFlightToWhatsApp(){
     encodeURIComponent(message),
     "_blank"
   );
-}</script>
+<script>
+function flightSearch(){
+
+  const from = document.getElementById("flightFrom").value.trim();
+  const to = document.getElementById("flightTo").value.trim();
+  const date = document.getElementById("flightDate").value;
+  const passengers = document.getElementById("flightPassengers").value;
+
+  const message = document.getElementById("flightMessage");
+
+  if(!from || !to || !date){
+    message.innerHTML =
+      "⚠️ From, To এবং Date পূরণ করুন।";
+    return;
+  }
+
+  const whatsappMessage =
+    "✈️ Flight Search Request\n\n" +
+    "🛫 From: " + from + "\n" +
+    "🛬 To: " + to + "\n" +
+    "📅 Date: " + date + "\n" +
+    "👥 Passengers: " + passengers;
+
+  const encodedMessage =
+    encodeURIComponent(whatsappMessage);
+
+  message.innerHTML =
+    "✈️ <strong>Flight Search Request</strong><br><br>" +
+    "🛫 " + from + " → 🛬 " + to + "<br>" +
+    "📅 " + date + "<br>" +
+    "👥 " + passengers + "<br><br>" +
+    "আপনার Flight Search Request প্রস্তুত হয়েছে।" +
+    "<br><br>" +
+
+    "<a href='https://wa.me/966575423054?text=" +
+    encodedMessage +
+    "' target='_blank' " +
+    "style='display:inline-block;background:#25D366;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;font-weight:bold;margin:5px;'>" +
+    "💬 WhatsApp 1" +
+    "</a>" +
+
+    "<a href='https://wa.me/966560757152?text=" +
+    encodedMessage +
+    "' target='_blank' " +
+    "style='display:inline-block;background:#25D366;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;font-weight:bold;margin:5px;'>" +
+    "💬 WhatsApp 2" +
+    "</a>";
+}
+<script>
+function flightSearch(){
+
+  const from = document.getElementById("flightFrom").value.trim();
+  const to = document.getElementById("flightTo").value.trim();
+  const date = document.getElementById("flightDate").value;
+  const passengers = document.getElementById("flightPassengers").value;
+
+  const message = document.getElementById("flightMessage");
+
+  if(!from || !to || !date){
+    message.innerHTML =
+      "⚠️ From, To এবং Date পূরণ করুন।";
+    return;
+  }
+
+  const whatsappMessage =
+    "✈️ Flight Search Request\n\n" +
+    "🛫 From: " + from + "\n" +
+    "🛬 To: " + to + "\n" +
+    "📅 Date: " + date + "\n" +
+    "👥 Passengers: " + passengers;
+
+  const encodedMessage =
+    encodeURIComponent(whatsappMessage);
+
+  message.innerHTML =
+    "✈️ <strong>Flight Search Request</strong><br><br>" +
+    "🛫 " + from + " → 🛬 " + to + "<br>" +
+    "📅 " + date + "<br>" +
+    "👥 " + passengers + "<br><br>" +
+    "আপনার Flight Search Request প্রস্তুত হয়েছে।" +
+    "<br><br>" +
+
+    "<a href='https://wa.me/966575423054?text=" +
+    encodedMessage +
+    "' target='_blank' " +
+    "style='display:inline-block;background:#25D366;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;font-weight:bold;margin:5px;'>" +
+    "💬 WhatsApp 1" +
+    "</a>" +
+
+    "<a href='https://wa.me/966560757152?text=" +
+    encodedMessage +
+    "' target='_blank' " +
+    "style='display:inline-block;background:#25D366;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;font-weight:bold;margin:5px;'>" +
+    "💬 WhatsApp 2" +
+    "</a>";
+}
+</script>
 </body>
 </html>
