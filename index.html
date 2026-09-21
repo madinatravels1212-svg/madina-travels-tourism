@@ -688,85 +688,17 @@ function changeLanguage(lang){
   </div>
 </section>
 
+</body>
 <script>
-function flightSearch(){
-  const from = document.getElementById("flightFrom").value;
-  const to = document.getElementById("flightTo").value;
-  const date = document.getElementById("flightDate").value;
-  const passengers = document.getElementById("flightPassengers").value;
-
-  const message = document.getElementById("flightMessage");
-
-  if(!from || !to || !date){
-    message.innerHTML = "⚠️ From, To এবং Date পূরণ করুন।";
-    return;
-  }
-
-  message.innerHTML =
-    "✈️ <strong>Flight Search Request</strong><br><br>" +
-    from + " → " + to + "<br>" +
-    "📅 " + date + "<br>" +
-    "👥 " + passengers + "<br><br>" +
-    "আপনার Flight Search Request প্রস্তুত হয়েছে।";
-}
-function sendFlightToWhatsApp(){
-  const from = document.getElementById("flightFrom").value;
-  const to = document.getElementById("flightTo").value;
-  const date = document.getElementById("flightDate").value;
-  const passengers = document.getElementById("flightPassengers").value;
-
-  if(!from || !to || !date){
-    alert("Please fill in From, To and Date");
-    return;
-  }
-
-  const message =
-    "✈️ Flight Search Request%0A%0A" +
-    "🛫 From: " + from + "%0A" +
-    "🛬 To: " + to + "%0A" +
-    "📅 Date: " + date + "%0A" +
-    "👥 Passengers: " + passengers;
-
-  window.open(
-    "https://wa.me/966575423054?text=" + message,
-    "_blank"
-  );
-}function sendFlightToWhatsApp(number){
-  const from = document.getElementById("flightFrom").value;
-  const to = document.getElementById("flightTo").value;
-  const date = document.getElementById("flightDate").value;
-  const passengers = document.getElementById("flightPassengers").value;
-
-  if(!from || !to || !date){
-    alert("Please fill in From, To and Date");
-    return;
-  }
-
-  const message =
-    "✈️ Flight Search Request\n\n" +
-    "🛫 From: " + from + "\n" +
-    "🛬 To: " + to + "\n" +
-    "📅 Date: " + date + "\n" +
-    "👥 Passengers: " + passengers;
-
-  window.open(
-    "https://wa.me/" + number + "?text=" +
-    encodeURIComponent(message),
-    "_blank"
-  );
-<script>
-function flightSearch(){
-
+function flightSearch() {
   const from = document.getElementById("flightFrom").value.trim();
   const to = document.getElementById("flightTo").value.trim();
   const date = document.getElementById("flightDate").value;
   const passengers = document.getElementById("flightPassengers").value;
-
   const message = document.getElementById("flightMessage");
 
-  if(!from || !to || !date){
-    message.innerHTML =
-      "⚠️ From, To এবং Date পূরণ করুন।";
+  if (!from || !to || !date) {
+    message.innerHTML = "⚠️ From, To এবং Date পূরণ করুন।";
     return;
   }
 
@@ -777,32 +709,19 @@ function flightSearch(){
     "📅 Date: " + date + "\n" +
     "👥 Passengers: " + passengers;
 
-  const encodedMessage =
-    encodeURIComponent(whatsappMessage);
+  const encodedMessage = encodeURIComponent(whatsappMessage);
 
   message.innerHTML =
     "✈️ <strong>Flight Search Request</strong><br><br>" +
     "🛫 " + from + " → 🛬 " + to + "<br>" +
     "📅 " + date + "<br>" +
     "👥 " + passengers + "<br><br>" +
-    "আপনার Flight Search Request প্রস্তুত হয়েছে।" +
-    "<br><br>" +
-
-    "<a href='https://wa.me/966575423054?text=" +
-    encodedMessage +
-    "' target='_blank' " +
-    "style='display:inline-block;background:#25D366;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;font-weight:bold;margin:5px;'>" +
-    "💬 WhatsApp 1" +
-    "</a>" +
-
-    "<a href='https://wa.me/966560757152?text=" +
-    encodedMessage +
-    "' target='_blank' " +
-    "style='display:inline-block;background:#25D366;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;font-weight:bold;margin:5px;'>" +
-    "💬 WhatsApp 2" +
-    "</a>";
+    "আপনার Flight Search Request প্রস্তুত হয়েছে।<br><br>" +
+    "<a href='https://wa.me/966575423054?text=" + encodedMessage +
+    "' target='_blank' style='display:inline-block;background:#25D366;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;font-weight:bold;margin:5px;'>💬 WhatsApp 1</a>" +
+    "<a href='https://wa.me/966560757152?text=" + encodedMessage +
+    "' target='_blank' style='display:inline-block;background:#25D366;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;font-weight:bold;margin:5px;'>💬 WhatsApp 2</a>";
 }
-
-
+</script>
 </body>
 </html>
